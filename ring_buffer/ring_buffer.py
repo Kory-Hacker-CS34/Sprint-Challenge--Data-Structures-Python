@@ -3,7 +3,7 @@ class RingBuffer:
         from collections import deque
         self.capacity = capacity
         self.current = 0
-        self.data = [[None]*capacity]
+        self.data = [None]*self.capacity
         # self.data = deque([], maxlen=capacity)
 
 
