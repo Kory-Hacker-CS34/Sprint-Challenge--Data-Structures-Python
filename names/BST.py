@@ -22,26 +22,43 @@ class BSTNode:
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        # pass
-
-        #check to see if target is current value
-        # if target == self.value:
-        #     return True
-        #start checking branches
+        if self.value == target:
+            return True
         if target < self.value:
             if self.left is None:
-                #if not, then the target isn't in the tree
                 return False
-            elif self.left.value == target:
-                #otherwise, we've found our target
-                return True
-        #checking the right branch
-        elif target > self.value:
-            #any more right branches?
+            # elif self.left.value == target:
+            #     return True
+            else:
+                return self.left.contains(target)
+        else:
             if self.right is None:
                 return False
-            elif self.right.value == target:
-                return True
+            # elif self.right.value == target:
+            #     return True
+            else:
+                return self.right.contains(target)
+    # def contains(self, target):
+    #     # pass
+
+    #     #check to see if target is current value
+    #     # if target == self.value:
+    #     #     return True
+    #     #start checking branches
+    #     if target < self.value:
+    #         if self.left is None:
+    #             #if not, then the target isn't in the tree
+    #             return False
+    #         elif self.left.value == target:
+    #             #otherwise, we've found our target
+    #             return True
+    #     #checking the right branch
+    #     elif target > self.value:
+    #         #any more right branches?
+    #         if self.right is None:
+    #             return False
+    #         elif self.right.value == target:
+    #             return True
 
     # Return the maximum value found in the tree
     def get_max(self):
